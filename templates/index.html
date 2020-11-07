@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>Welcome</title>
+  </head>
+  <body>
+	<style>
+		body,html {
+			background-image: url({{url_for('static', filename='img/background.gif')}});
+			height: 100%;
+		}
+        h2 {
+            text-align: center;
+        }
+	</style>
+
+	<div class="container-fluid h-100">
+    <div class="row justify-content-center align-items-center h-100">
+        <div class="col col-sm-6 col-md-6 col-lg-4 col-xl-3">
+            {% if umessage %}
+            <div class="alert alert-danger">
+                <center>{{umessage}}</center>
+            </div>
+            {% endif %}
+            <h2>Login</h2>
+            <form action="/index" method="post">
+                <div class="form-group">
+                    <input _ngcontent-c0="" class="form-control form-control-lg" name="user_email" placeholder="User email" type="text">
+                </div>
+                <div class="form-group">
+                    <input class="form-control form-control-lg"  name="user_pwd" placeholder="Password" type="password">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-info btn-lg btn-block" >Sign In</button>
+                </div>
+				<div class="form-group">
+					<a class="btn btn-primary btn-sm" href="/reset_password">Forgot password</a>
+					<a class="btn btn-secondary btn-sm" href="/create_account">Signup</a>
+				</div>
+            </form>
+        </div>
+    </div>
+    </div>
+  </body>
+</html>

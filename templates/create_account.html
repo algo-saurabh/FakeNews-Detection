@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>Register with us</title>
+  </head>
+  <body>
+	<style>
+		body,html {
+            background-image: url({{url_for('static', filename='img/background.gif')}});
+			height: 100%;
+		}
+	</style>
+
+	<div class="container-fluid h-100">
+    <div class="row justify-content-center align-items-center h-100">
+        <div class="col col-sm-6 col-md-6 col-lg-4 col-xl-3">
+            {% if exist_message %}
+            <div class="alert alert-danger">
+                <center>{{exist_message}}</center>
+            </div>
+            {% endif %}
+            <form action="/create_account" method="post">
+				<h2 class="text-center"> Sign Up </h2>
+                <div class="form-group">
+                    <input _ngcontent-c0="" class="form-control form-control-lg" name="user_email" placeholder="Email" type="text">
+                </div>
+                <div class="form-group">
+                    <input class="form-control form-control-lg" name="user_pwd0" placeholder="Password" type="password">
+                </div>
+				<div class="form-group">
+                    <input class="form-control form-control-lg" name="user_pwd1" placeholder="Confirm password" type="password">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-info btn-lg btn-block">Register</button>
+                </div>
+            </form>
+            <div class="">
+                    <button class="btn btn-info btn-lg btn-block"><a href="/index">Login</a></button>
+            </div>
+        </div>
+    </div>
+    </div>
+  </body>
+</html>
